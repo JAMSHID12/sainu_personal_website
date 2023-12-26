@@ -25,12 +25,25 @@ $('#nav-toggle').click(function(){
 
 $(document).ready(function(){
     $('.owl-carousel').owlCarousel({
-      items: 8, // Set the number of items to show
-      loop: true, // Enable loop
-      autoplay: true, // Enable autoplay
-      autoplayTimeout: 3000, // Set autoplay timeout in milliseconds (e.g., 3000 = 3 seconds)
-      autoplayHoverPause: false // Disable autoplay pause on hover
+      items: 8, // Set the default number of items to show
+      loop: true,
+      autoplay: true,
+      autoplayTimeout: 3000,
+      autoplayHoverPause: false,
+      responsive: {
+        0: {
+          items: 3
+        },
+        600: {
+          items: 5 
+        },
+        1000: {
+          items: 7
+        }
+      }
     });
 });
+
+
 
 

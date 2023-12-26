@@ -13430,77 +13430,92 @@ pre .code {
         6.  Skills
 --------------------------------------*/
 .skills {
-    margin-bottom: 0;
-    padding: 0;
+  margin-bottom: 0;
+  padding: 0;
 }
 
 .single-progress-txt {
-    display: flex;
+  display: flex;
 }
+
+.skills .skill-content {
+  padding: 10px;
+}
+
 .single-progress-txt h3 {
-    width: 10%;
-    color: #a606c3;
-    position: relative;
-    top: 6px;
-    left: 20px;
+  width: 10%;
+  color: #a606c3;
+  position: relative;
+  top: 6px;
+  left: 20px;
+  font-size: 18px;
 }
+
 .barWrapper {
-    font-weight: 400;
-    font-size: 16px;
-    text-transform: uppercase;
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: uppercase;
 }
+
 .progress {
-    border-radius:3px;
-    overflow: visible;
-    background: #e6ecf3;
-    height:8px;
-    margin-top: 15px;
-    width: 85%;
-    margin-bottom: 37px;
+  border-radius: 3px;
+  overflow: visible;
+  background: #e6ecf3;
+  height: 8px;
+  margin-top: 15px;
+  width: 85%;
+  margin-bottom: 37px;
 }
+
 .progress-bar {
-   background: #b636ff;
-    border-radius: 3px;
-   -webkit-transition: width 1.5s ease-in-out;
-   -ms-transition: width 1.5s ease-in-out;
-   -moz-transition: width 1.5s ease-in-out;
-   -o-transition: width 1.5s ease-in-out;
-   transition: width 1.5s ease-in-out;
+  background: #b636ff;
+  border-radius: 3px;
+  -webkit-transition: width 1.5s ease-in-out;
+  -ms-transition: width 1.5s ease-in-out;
+  -moz-transition: width 1.5s ease-in-out;
+  -o-transition: width 1.5s ease-in-out;
+  transition: width 1.5s ease-in-out;
 }
-.tooltip{
-   position:relative;
-   float:right;
+
+.tooltip {
+  position: relative;
+  float: right;
 }
-.tooltip > .tooltip-inner {
-   background-color: transparent;
-   padding: 1px 5px;
-   color: #b636ff;
-   font-weight: 500;
-   font-size: 12px;
-   border-radius: 0;
+
+.tooltip>.tooltip-inner {
+  background-color: transparent;
+  padding: 1px 5px;
+  color: #b636ff;
+  font-weight: 500;
+  font-size: 12px;
+  border-radius: 0;
 }
-.popOver + .tooltip > .tooltip-arrow {
-   border-left: 6px solid transparent;
-   border-right: 6px solid transparent;
-   border-top: 6px solid #fff;
-   bottom: -1px;
-   transform: translateX(-50%);
-   margin-left: 0;
+
+.popOver+.tooltip>.tooltip-arrow {
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #fff;
+  bottom: -1px;
+  transform: translateX(-50%);
+  margin-left: 0;
 }
+
 /*-------------------------------------
 
 /*-------------------------------------
         10. Clients
 --------------------------------------*/
 
-
-
+.clients-area {
+  display: flex;
+  align-items: center;
+}
 
 .clients .clients-area .owl-carousel .owl-item img {
-    display: block;
-    width: 85%;
-    height: 60%;
-    border-radius:0;
+  display: block;
+  width: 80%;
+  height: 20%;
+  border-radius: 0;
 }
 
 .img-wrapper {
@@ -13537,12 +13552,12 @@ pre .code {
   top: 0%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   -webkit-transition-delay: .2s;
-          transition-delay: .2s;
+  transition-delay: .2s;
   color: #fff;
 }
 
@@ -13567,14 +13582,64 @@ pre .code {
   color: #ff7a57;
 }
 
-.img-wrapper:hover .overlay, .img-wrapper:active .overlay {
+.img-wrapper:hover .overlay,
+.img-wrapper:active .overlay {
   bottom: 0;
   visibility: visible;
   opacity: 1;
 }
 
-.img-wrapper:hover .overlay .overlay-infos, .img-wrapper:active .overlay .overlay-infos {
+.img-wrapper:hover .overlay .overlay-infos,
+.img-wrapper:active .overlay .overlay-infos {
   top: 50%;
 }
 
+/*-------------------------------------
+
+/*-------------------------------------
+        11. resume
+--------------------------------------*/
+
+.resume {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #fff;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.resume .column {
+  width: 48%;
+}
+
+.resume .column h4 {
+  margin-left: 10px;
+  margin-bottom: -5px;
+}
+
+.resume .column .p-class{
+  font-size: 12px;
+}
+
+.resume .card {
+  padding: 15px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.resume .card hr {
+  border: 1px solid #000;
+}
+.resume .colum-header {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+.resume .colum-header i{
+  
+  font-size: 22px;
+}
 
