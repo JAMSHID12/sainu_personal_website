@@ -24,30 +24,12 @@ $('#nav-toggle').click(function(){
 });
 
 $(document).ready(function(){
-    $("#owl-carousel").owlCarousel({
-        items: 10, // Number of items to display
-        loop: true, // Infinite loop
-        margin: 10, // Space between items
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:3
-            },
-            1000:{
-                items:5
-            },
-            1300:{
-                items:7
-            },
-            1600:{
-                items:9
-            },
-            1900:{
-                items:11
-            }
-        }
+    $('.owl-carousel').owlCarousel({
+      items: 8, // Set the number of items to show
+      loop: true, // Enable loop
+      autoplay: true, // Enable autoplay
+      autoplayTimeout: 3000, // Set autoplay timeout in milliseconds (e.g., 3000 = 3 seconds)
+      autoplayHoverPause: false // Disable autoplay pause on hover
     });
 });
 

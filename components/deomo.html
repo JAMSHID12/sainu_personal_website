@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Navigation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.7;
+            
+        }
+
+        /* Add additional styling for animation */
+        section.active {
+            background-color: #eee;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Animated Navigation</h1>
+    </header>
+
+    <nav>
+        <a href="#section1" onclick="navigateTo('section1')">Section 1</a>
+        <a href="#section2" onclick="navigateTo('section2')">Section 2</a>
+        <a href="#section3" onclick="navigateTo('section3')">Section 3</a>
+    </nav>
+
+    <section id="section1" class="active">
+        <h2>Section 1</h2>
+        <p>This is the content of Section 1.</p>
+    </section>
+
+    <section id="section2">
+        <h2>Section 2</h2>
+        <p>This is the content of Section 2.</p>
+    </section>
+
+    <section id="section3">
+        <h2>Section 3</h2>
+        <p>This is the content of Section 3.</p>
+    </section>
+
+    <script>
+        function navigateTo(sectionId) {
+            // Remove 'active' class from all sections
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Add 'active' class to the target section
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.add('active');
+
+            // Get the target position
+            const targetPosition = targetSection.offsetTop;
+            
+            // Set the duration of the scroll animation
+            const duration = 1000; // in milliseconds
+            const startTime = performance.now();
+
+            // Perform the scroll animation
+            function scrollAnimation(currentTime) {
+                const elapsedTime = currentTime - startTime;
+                const progress = Math.min(elapsedTime / duration, 1);
+                const easeInOutCubic = progress < 0.5 ? 4 * progress ** 3 : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+                window.scrollTo(0, targetPosition * easeInOutCubic);
+
+                if (progress < 1) {
+                    requestAnimationFrame(scrollAnimation);
+                }
+            }
+
+            requestAnimationFrame(scrollAnimation);
+        }
+    </script>
+
+</body>
+</html>

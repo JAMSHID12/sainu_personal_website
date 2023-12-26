@@ -17,41 +17,42 @@
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
-
+    
     <!-- Page Navbar -->
     <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
         <div class="container">
             <a class="logo" href="#">SAINU</a>
             <ul class="nav">
                 <li class="item">
-                    <a class="link" href="#home">Home</a>
+                    <a class="link" onclick="navigateTo('home')" href="#home">Home</a>
                 </li>
                 <li class="item">
-                    <a class="link" href="#about">About</a>
+                    <a class="link" onclick="navigateTo('about')" href="#about">About</a>
                 </li>
                 <li class="item">
-                    <a class="link" href="#skills">Skills</a>
+
+                    <a class="link" onclick="navigateTo('skills')" href="#skills">Skills</a>
                 </li>
                 <li class="item">
-                    <a class="link" href="#awards">Awards</a>
+                    <a class="link" onclick="navigateTo('awards')" href="#awards">Awards</a>
                 </li>
                 <li class="item">
-                    <a class="link" href="#portfolio">Portfolio</a>
+                    <a class="link" onclick="navigateTo('portfolio')" href="#portfolio">Portfolio</a>
                 </li>
 
                 <li class="item">
-                    <a class="link" href="#testmonial">Testmonial</a>
+                    <a class="link" onclick="navigateTo('testmonial')" href="#testmonial">Testmonial</a>
                 </li>
 
                 <li class="item">
-                    <a class="link" href="#clients">Clients</a>
+                    <a class="link" onclick="navigateTo('clients')" href="#clients">Clients</a>
                 </li>
 
                 <li class="item">
-                    <a class="link" href="#experience">Resume</a>
+                    <a class="link" onclick="navigateTo('experience')" href="#experience">Resume</a>
                 </li>
                 <li class="item">
-                    <a class="link" href="#contact">Contact</a>
+                    <a class="link" onclick="navigateTo('contact')" href="#contact">Contact</a>
                 </li>
             </ul>
             <a href="javascript:void(0)" id="nav-toggle" class="hamburger hamburger--elastic">
@@ -113,24 +114,24 @@
                     <div class="col-md-6">
                         <div class="single-skill-content">
                             <div class="barWrapper">
-                                <span class="progressText">adobe photoshop</span>
+                                <span class="progressText">Product Design</span>
                                 <div class="single-progress-txt">
                                     <div class="progress ">
                                         <div class="progress-bar" role="progressbar" aria-valuenow="90"
                                             aria-valuemin="10" aria-valuemax="100" style="">
-
+                                            ___________________________________________________________________________________
                                         </div>
                                     </div>
                                     <h3>90%</h3>
                                 </div>
                             </div><!-- /.barWrapper -->
                             <div class="barWrapper">
-                                <span class="progressText">adobe illustrator</span>
+                                <span class="progressText">User Experience Design </span>
                                 <div class="single-progress-txt">
                                     <div class="progress ">
                                         <div class="progress-bar" role="progressbar" aria-valuenow="85"
                                             aria-valuemin="10" aria-valuemax="100" style="">
-
+                                                         ________________________________________________________________________________                                        
                                         </div>
                                     </div>
                                     <h3>85%</h3>
@@ -142,23 +143,24 @@
                     <div class="col-md-6">
                         <div class="single-skill-content">
                             <div class="barWrapper">
-                                <span class="progressText">html 5</span>
+                                <span class="progressText">Personas, Scenarios & IA </span>
                                 <div class="single-progress-txt">
                                     <div class="progress ">
                                         <div class="progress-bar" role="progressbar" aria-valuenow="90"
                                             aria-valuemin="10" aria-valuemax="100" style="">
+                                            ___________________________________________________________________________________
                                         </div>
                                     </div>
                                     <h3>90%</h3>
                                 </div>
                             </div><!-- /.barWrapper -->
                             <div class="barWrapper">
-                                <span class="progressText">css 3 animation</span>
+                                <span class="progressText">Mobile, Web & ERP Design </span>
                                 <div class="single-progress-txt">
                                     <div class="progress ">
                                         <div class="progress-bar" role="progressbar" aria-valuenow="85"
                                             aria-valuemin="10" aria-valuemax="100" style="">
-
+                                            ________________________________________________________________________________
                                         </div>
                                     </div>
                                     <h3>85%</h3>
@@ -184,14 +186,14 @@
             <div class="row mb-3">
                 <div class="col-md-6 award-img-div" id="award_1">
                     <a href="#award_1" class="portfolio-card">
-                        <img src="./assets/image/awards/award_1.png" class="portfolio-card-img"
+                        <img src="./assets/image/awards/aw-1.png" class="portfolio-card-img"
                             alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
 
                     </a>
                 </div>
                 <div class="col-md-6" id="award_2">
                     <a href="#award_2" class="portfolio-card">
-                        <img src="./assets/image/awards/award_2.png" class="portfolio-card-img"
+                        <img src="./assets/image/awards/aw-2.png" class="portfolio-card-img"
                             alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
 
                     </a>
@@ -201,14 +203,14 @@
             <div class="row">
                 <div class="col-md-6 " id="award_3">
                     <a href="#award_3" class="portfolio-card">
-                        <img src="./assets/image/awards/award_3.png" class="portfolio-card-img"
+                        <img src="./assets/image/awards/aw-3.png" class="portfolio-card-img"
                             alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
 
                     </a>
                 </div>
                 <div class="col-md-6" id="award_4">
                     <a href="#award_4" class="portfolio-card">
-                        <img src="./assets/image/awards/award_4.png" class="portfolio-card-img"
+                        <img src="./assets/image/awards/aw-4.png" class="portfolio-card-img"
                             alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
 
                     </a>
@@ -220,7 +222,7 @@
     <!-- Portfolio section -->
     <section id="portfolio" class="section">
         <div class="container text-center">
-            <p class="section-subtitle">Check My Wonderful Works</p>
+            <p class="section-subtitle">Check My Wonderful Works.</p>
             <h6 class="section-title mb-4">Portfolio</h6>
            
             <div class="row">
@@ -308,7 +310,7 @@
                     <p class="m-0 text-light">Always feel free to contact</p>
                 </div>
                 <div class="col-sm offset-sm-2 offset-md-3">
-                    <a href="#contact"><button class="btn btn-lg my-font btn-light rounded">Contact me</button></a>
+                    <a onclick="navigateTo('contact')" href="#contact"><button class="btn btn-lg my-font btn-light rounded">Contact me</button></a>
                 </div>
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -488,43 +490,38 @@
     <!--clients start -->
     <section id="clients" class="section clients">
         <div class="container text-center">
-            <p class="section-subtitle">clientss....?</p>
+            <p class="section-subtitle">Collaborations ?</p>
             <h6 class="section-title mb-5">Clients</h6>
         </div>
         <div class="clients-area">
             <div class="container">
-                <div class="owl-carousel " id="owl-carousel">
+                <div class="owl-carousel" id="owl-carousel">
                     <div class="item">
-                        <img src="./assets/image/clients/c1.png" alt="brand-image" />
+                        <img class="img-fluid" src="./assets/image/clients/c-1.png" alt="brand-image" />
                         
                     </div><!--/.item-->
                     <div class="item">
-                        <img src="assets/image/clients/c2.png" alt="brand-image" />
+                        <img src="assets/image/clients/c-2.png" alt="brand-image" />
                     </div><!--/.item-->
                     <div class="item">
-                        <img src="assets/image/clients/c3.png" alt="brand-image" />
+                        <img src="assets/image/clients/c-3.png" alt="brand-image" />
                     </div><!--/.item-->
                     <div class="item">
-                        <img src="assets/image/clients/c4.png" alt="brand-image" />
+                        <img src="assets/image/clients/c-4.png" alt="brand-image" />
                     </div><!--/.item-->
                     <div class="item">
-                        <img src="assets/image/clients/c5.png" alt="brand-image" />
+                        <img src="assets/image/clients/c-5.png" alt="brand-image" />
                     </div><!--/.item-->
                     <div class="item">
-                        <img src="assets/image/clients/c6.png" alt="brand-image" />
+                        <img src="assets/image/clients/c-6.png" alt="brand-image" />
                     </div><!--/.item-->
                     <div class="item">
-                        <img src="assets/image/clients/c7.png" alt="brand-image" />
+                        <img src="assets/image/clients/c-7.png" alt="brand-image" />
                     </div><!--/.item-->
                     <div class="item">
-                        <img src="assets/image/clients/c8.png" alt="brand-image" />
+                        <img src="assets/image/clients/c-8.png" alt="brand-image" />
                     </div><!--/.item-->
-                    <div class="item">
-                        <img src="assets/image/clients/c9.png" alt="brand-image" />
-                    </div><!--/.item-->
-                    <div class="item">
-                        <img src="assets/image/clients/c10.png" alt="brand-image" />
-                    </div><!--/.item-->
+                    
                 </div><!--/.owl-carousel-->
             </div><!--/.container-->
         </div><!--/.clients-area-->
@@ -581,8 +578,42 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
-    <!-- Meyawo js -->
+    <!-- Sainu js -->
     <script src="./assets/js/sainu.js"></script>
+
+    <script>
+        function navigateTo(sectionId) {
+            // Remove 'active' class from all sections
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Add 'active' class to the target section
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.add('active');
+
+            // Get the target position
+            const targetPosition = targetSection.offsetTop;
+            
+            // Set the duration of the scroll animation
+            const duration = 1000; // in milliseconds
+            const startTime = performance.now();
+
+            // Perform the scroll animation
+            function scrollAnimation(currentTime) {
+                const elapsedTime = currentTime - startTime;
+                const progress = Math.min(elapsedTime / duration, 1);
+                const easeInOutCubic = progress < 0.5 ? 4 * progress ** 3 : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+                window.scrollTo(0, targetPosition * easeInOutCubic);
+
+                if (progress < 1) {
+                    requestAnimationFrame(scrollAnimation);
+                }
+            }
+
+            requestAnimationFrame(scrollAnimation);
+        }
+    </script>
 
 </body>
 

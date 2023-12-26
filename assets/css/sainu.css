@@ -13493,16 +13493,13 @@ pre .code {
         10. Clients
 --------------------------------------*/
 
-.clients-area {
-    display: flex;
-    align-items: center;
-}
-.clients-area .item {padding: 0 25px;}
+
+
 
 .clients .clients-area .owl-carousel .owl-item img {
     display: block;
-    width: 70%;
-    height: 10%;
+    width: 85%;
+    height: 60%;
     border-radius:0;
 }
 
@@ -13580,7 +13577,4 @@ pre .code {
   top: 50%;
 }
 
-.award-img-div .portfolio-card-img {
-  border: 1px solid black;
-}
 
