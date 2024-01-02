@@ -12297,6 +12297,22 @@ p {
   width: 100%;
 }
 
+.portfolio .grid-item:nth-child(2),
+.portfolio .grid-item:nth-child(4),
+.portfolio .grid-item:nth-child(6){
+  filter: blur(9px); /* Apply a 90% blur effect to the second row */
+  position: relative;
+  overflow: hidden;
+  -webkit-filter: blur(6px); 
+	-moz-filter: blur(6px); 
+	-o-filter: blur(6px); 
+	-ms-filter: blur(6px); 
+}
+
+.grid-item .overlay .overlay-infos {
+  display: none;
+}
+
 .portfolio-card .portfolio-card-overlay {
   position: absolute;
   top: 50%;
@@ -13600,46 +13616,50 @@ pre .code {
         11. resume
 --------------------------------------*/
 
-.resume {
+.experience .colum-header {
   display: flex;
-  justify-content: space-around;
-  padding: 20px;
-  background-color: #fff;
-  margin-top: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
+  align-items: center;
+  margin: 10px;
+} 
+.education .colum-header {
+  display: flex;
+  align-items: center;
+  margin: 10px;
 }
-
-.resume .column {
-  width: 48%;
+.education .colum-header i {
+  margin-right: 10px;
+  margin-bottom: 5px; 
 }
-
-.resume .column h4 {
-  margin-left: 10px;
-  margin-bottom: -5px;
+.experience .colum-header i {
+  margin-right: 10px;
+  margin-bottom: 5px; 
 }
-
-.resume .column .p-class{
-  font-size: 12px;
-}
-
-.resume .card {
+.experience .card {
   padding: 15px;
   margin: 10px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-.resume .card hr {
+.education .card {
+  padding: 15px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.education .card hr {
   border: 1px solid #000;
 }
-.resume .colum-header {
-  display: flex;
-  align-items: center;
-  margin: 10px;
+.experience .card hr {
+  border: 1px solid #000;
 }
-.resume .colum-header i{
-  
+.experience .colum-header i{
   font-size: 22px;
 }
+.education .colum-header i{
+  font-size: 22px;
+}
+
+/*-------------------------------------
+
+
 
