@@ -25,7 +25,7 @@ $('#nav-toggle').click(function(){
 
 $(document).ready(function(){
     $('.owl-carousel').owlCarousel({
-      items: 8, // Set the default number of items to show
+      items: 9, // Set the default number of items to show
       loop: true,
       autoplay: true,
       autoplayTimeout: 3000,

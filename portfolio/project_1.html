@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sainu.me</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
     <!-- Custom styles for this template -->
     <link href="style.css" rel="stylesheet" />
 </head>
@@ -22,49 +24,94 @@
                     <a href="../index.html">Home</a>
                 </li>
                 <li>
-                    <a href="#">deo</a>
+                    <a onclick="navigateTo('overview')" href="#overview">Overview</a>
                 </li>
                 <li>
-                    <a href="#">contact me</a>
+                    <a onclick="navigateTo('user-flow')" href="#user-flow">User Flow</a>
                 </li>
                 <li>
-                    <a href="#">about</a>
+                    <a onclick="navigateTo('screen')" href="#screen">Screens</a>
                 </li>
+                
             </ul>
         </nav>
     </header>
 
     <div class="container">
-            <img src="../assets/image/portfolio/little-brahma/lb_fr-1.jpg" alt="Image 1">
-            <img src="../assets/image/portfolio/little-brahma/lb_fr-2.jpg" alt="Image 2">
-            <img src="../assets/image/portfolio/little-brahma/lb_fr-3.jpg" alt="Image 3">
-            <img src="../assets/image/portfolio/little-brahma/lb_fr-4.jpg" alt="Image 4">
-            <img src="../assets/image/portfolio/little-brahma/lb_fr-5.jpg" alt="Image 5">
-            <img src="../assets/image/portfolio/little-brahma/lb_fr-6.jpg" alt="Image 6">
-            <img src="../assets/image/portfolio/little-brahma/lb_fr-7.jpg" alt="Image 7">
-            <img src="../assets/image/portfolio/little-brahma/lb_fr-8.jpg" alt="Image 8">
-            <img src="../assets/image/portfolio/little-brahma/lb_fr-9.jpg" alt="Image 9">
-            <img src="../assets/image/portfolio/little-brahma/lb_fr-10.jpg" alt="Image 10">
+            <img src="../assets/image/portfolio/little-brahma/lb_pf_1.png" alt="Image 1">
+            <img id="overview" src="../assets/image/portfolio/little-brahma/lb_pf_2.png" alt="Image 2">
+            <img src="../assets/image/portfolio/little-brahma/lb_pf_3.png" alt="Image 3">
+            <img id="user-flow" src="../assets/image/portfolio/little-brahma/lb_pf_4.png" alt="Image 4">
+            <img id="screen" src="../assets/image/portfolio/little-brahma/lb_pf_5.png" alt="Image 5">
+            <img src="../assets/image/portfolio/little-brahma/lb_pf_6.png" alt="Image 6">
+            <img src="../assets/image/portfolio/little-brahma/lb_pf_7.png" alt="Image 7">
+            <img src="../assets/image/portfolio/little-brahma/lb_pf_8.png" alt="Image 8">
+            <img src="../assets/image/portfolio/little-brahma/lb_pf_9.png" alt="Image 9">
+            <img src="../assets/image/portfolio/little-brahma/lb_pf_10.png" alt="Image 10">
     </div>
 
     <!-- footer -->
     
-        <footer class="footer">
+    <footer class="footer">
             <p class="mb-0">Copyright 2024
                 @sainu
             </p>
             <div class="social-links text-right m-auto ml-sm-auto">
-                <a href="javascript:void(0)" class="link"><i class="ti-linkedin"></i></a>
-                <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
-                <a href="javascript:void(0)" class="link"><i class="ti-pinterest-alt"></i></a>
+                <a href="https://www.linkedin.com/in/sainu123" class="link"><i class="fab fa-brands fa-linkedin-in"></i></a>
+                <a href="https://dribbble.com/sainumechpd" class="link"><i class="fab fa-brands fa-dribbble"></i></a>
+                <a href="https://www.behance.net/sainumechpd" class="link"><i class="fab fa-behance"></i></a>
             </div>
-        </footer>
+    </footer>
    
     <script>
         hamburger = document.querySelector(".hamburger");
         hamburger.onclick = function(){
             navBar = document.querySelector(".nav-bar");
             navBar.classList.toggle("active")
+        }
+    
+        function navigateTo(sectionId) {
+            // Add 'active' class to the target section
+            const targetSection = document.getElementById(sectionId);
+            const isAlreadyVisible = isElementInViewport(targetSection);
+
+            if (!isAlreadyVisible) {
+                // Remove 'active' class from all sections
+                document.querySelectorAll('section').forEach(section => {
+                    section.classList.remove('active');
+                });
+
+                targetSection.classList.add('active');
+
+                // Set the duration of the scroll animation
+                const duration = 1000; // in milliseconds
+                const startTime = performance.now();
+                const startScroll = window.scrollY;
+
+                // Perform the scroll animation
+                function scrollAnimation(currentTime) {
+                    const elapsedTime = currentTime - startTime;
+                    const progress = Math.min(elapsedTime / duration, 1);
+                    const easeInOutCubic = progress < 0.5 ? 4 * progress ** 3 : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+                    window.scrollTo(0, startScroll + (targetSection.offsetTop - startScroll) * easeInOutCubic);
+
+                    if (progress < 1) {
+                        requestAnimationFrame(scrollAnimation);
+                    }
+                }
+
+                requestAnimationFrame(scrollAnimation);
+            }
+        }
+
+        function isElementInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
         }
     </script>
 </body>
