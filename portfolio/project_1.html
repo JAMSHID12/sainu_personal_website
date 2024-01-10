@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sainu.me</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
     <!-- Custom styles for this template -->
     <link href="style.css" rel="stylesheet" />
+    <link href="project.js" rel="javascript" />
 </head>
+
 <body>
     <header>
         <div class="logo">Little Brahma</div>
@@ -32,44 +37,61 @@
                 <li>
                     <a onclick="navigateTo('screen')" href="#screen">Screens</a>
                 </li>
-                
+
             </ul>
         </nav>
     </header>
 
     <div class="container">
-            <img src="../assets/image/portfolio/little-brahma/lb_pf_1.png" alt="Image 1">
-            <img id="overview" src="../assets/image/portfolio/little-brahma/lb_pf_2.png" alt="Image 2">
-            <img src="../assets/image/portfolio/little-brahma/lb_pf_3.png" alt="Image 3">
-            <img id="user-flow" src="../assets/image/portfolio/little-brahma/lb_pf_4.png" alt="Image 4">
-            <img id="screen" src="../assets/image/portfolio/little-brahma/lb_pf_5.png" alt="Image 5">
-            <img src="../assets/image/portfolio/little-brahma/lb_pf_6.png" alt="Image 6">
-            <img src="../assets/image/portfolio/little-brahma/lb_pf_7.png" alt="Image 7">
-            <img src="../assets/image/portfolio/little-brahma/lb_pf_8.png" alt="Image 8">
-            <img src="../assets/image/portfolio/little-brahma/lb_pf_9.png" alt="Image 9">
-            <img src="../assets/image/portfolio/little-brahma/lb_pf_10.png" alt="Image 10">
+        <img src="../assets/image/portfolio/pf_1/pf_s1.png" alt="Image 1">
+        <img id="overview" src="../assets/image/portfolio/pf_1/pf_s2.png" alt="Image 2">
+        <img src="../assets/image/portfolio/pf_1/pf_s3.png" alt="Image 3">
+        <img id="user-flow" src="../assets/image/portfolio/pf_1/pf_s4.png" alt="Image 4">
+        <img src="../assets/image/portfolio/pf_1/pf_s5.png" alt="Image 5">
+        <img src="../assets/image/portfolio/pf_1/pf_s6.png" alt="Image 6">
+        <img src="../assets/image/portfolio/pf_1/pf_s7.png" alt="Image 7">
+        <img src="../assets/image/portfolio/pf_1/pf_s8.png" alt="Image 8">
+        <img src="../assets/image/portfolio/pf_1/pf_s9.png" alt="Image 9">
+        <img src="../assets/image/portfolio/pf_1/pf_s10.png" alt="Image 10">
+        <img src="../assets/image/portfolio/pf_1/pf_s11.png" alt="Image 11">
+        <img src="../assets/image/portfolio/pf_1/pf_s12.png" alt="Image 12">
+        <img src="../assets/image/portfolio/pf_1/pf_s13.png" alt="Image 13">
+        <img src="../assets/image/portfolio/pf_1/pf_s14.png" alt="Image 14">
+        <img src="../assets/image/portfolio/pf_1/pf_s15.png" alt="Image 15">
+        <img src="../assets/image/portfolio/pf_1/pf_s16.png" alt="Image 16">
+        <img src="../assets/image/portfolio/pf_1/pf_s17.png" alt="Image 17">
+        <img src="../assets/image/portfolio/pf_1/pf_s18.png" alt="Image 18">
+        <img src="../assets/image/portfolio/pf_1/pf_s19.png" alt="Image 19">
+        <img src="../assets/image/portfolio/pf_1/pf_s20.png" alt="Image 20">
+        <img src="../assets/image/portfolio/pf_1/pf_s21.png" alt="Image 21">
+        <img src="../assets/image/portfolio/pf_1/pf_s22.png" alt="Image 22">
+        <img src="../assets/image/portfolio/pf_1/pf_s23.png" alt="Image 23">
     </div>
 
     <!-- footer -->
-    
     <footer class="footer">
-            <p class="mb-0">Copyright 2024
-                @sainu
-            </p>
-            <div class="social-links text-right m-auto ml-sm-auto">
-                <a href="https://www.linkedin.com/in/sainu123" class="link"><i class="fab fa-brands fa-linkedin-in"></i></a>
-                <a href="https://dribbble.com/sainumechpd" class="link"><i class="fab fa-brands fa-dribbble"></i></a>
-                <a href="https://www.behance.net/sainumechpd" class="link"><i class="fab fa-behance"></i></a>
-            </div>
+        <p class="mb-0">Copyright 2024
+            @sainu
+        </p>
+        <div class="social-links ">
+            <a href="https://www.linkedin.com/in/sainu123" class="link"><i class="fab fa-brands fa-linkedin-in"></i></a>
+            <a href="https://dribbble.com/sainumechpd" class="link"><i class="fab fa-brands fa-dribbble"></i></a>
+            <a href="https://www.behance.net/sainumechpd" class="link"><i class="fab fa-behance"></i></a>
+        </div>
     </footer>
-   
+
+
+    <button id="scrollToTopBtn" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></button>
+
     <script>
+
+
         hamburger = document.querySelector(".hamburger");
-        hamburger.onclick = function(){
+        hamburger.onclick = function () {
             navBar = document.querySelector(".nav-bar");
             navBar.classList.toggle("active")
         }
-    
+
         function navigateTo(sectionId) {
             // Add 'active' class to the target section
             const targetSection = document.getElementById(sectionId);
@@ -113,6 +135,34 @@
                 rect.right <= (window.innerWidth || document.documentElement.clientWidth)
             );
         }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+            var rootElement = document.documentElement;
+
+            function handleScroll() {
+                var scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+                if (rootElement.scrollTop / scrollTotal > 0.2) {
+                    // Show button when 20% of the page is scrolled
+                    scrollToTopBtn.style.display = "block";
+                } else {
+                    // Hide button when less than 20% of the page is scrolled
+                    scrollToTopBtn.style.display = "none";
+                }
+            }
+
+            function scrollToTop() {
+                rootElement.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                });
+            }
+
+            scrollToTopBtn.addEventListener("click", scrollToTop);
+            document.addEventListener("scroll", handleScroll);
+        });
+
     </script>
 </body>
+
 </html>

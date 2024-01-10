@@ -12297,9 +12297,7 @@ p {
   width: 100%;
 }
 
-.portfolio .grid-item:nth-child(2),
-.portfolio .grid-item:nth-child(4),
-.portfolio .grid-item:nth-child(6) {
+.portfolio .grid-item {
   filter: blur(9px);
   /* Apply a 90% blur effect to the second row */
   position: relative;
@@ -13677,4 +13675,5 @@ pre .code {
   font-size: 22px;
 }
 
-/*-------------------------------------
+
+

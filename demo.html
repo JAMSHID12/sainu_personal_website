@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll to Top</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .content {
+      height: 1000px; /* Adjust this height based on your content */
+      padding: 20px;
+    }
+
+    #scrollToTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #f0f0f0; /* Grey background color */
+      border: none;
+      border-radius: 50%; /* Make it rounded */
+      cursor: pointer;
+      padding: 10px;
+      transition: background-color 0.3s ease; /* Add a smooth transition for hover effect */
+    }
+
+    #scrollToTopBtn:hover {
+      background-color: #3498db; /* Beautiful color on hover */
+    }
+
+    #scrollToTopBtn span {
+      color: #fff; /* Icon color */
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <!-- Your scrollable content goes here -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+  </div>
+  <button id="scrollToTopBtn" onclick="scrollToTop()"><span>↑</span></button>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+      var rootElement = document.documentElement;
+
+      function handleScroll() {
+        var scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+        if (rootElement.scrollTop / scrollTotal > 0.2) {
+          // Show button when 20% of the page is scrolled
+          scrollToTopBtn.style.display = "block";
+        } else {
+          // Hide button when less than 20% of the page is scrolled
+          scrollToTopBtn.style.display = "none";
+        }
+      }
+
+      function scrollToTop() {
+        rootElement.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+
+      scrollToTopBtn.addEventListener("click", scrollToTop);
+      document.addEventListener("scroll", handleScroll);
+    });
+  </script>
+</body>
+</html>
