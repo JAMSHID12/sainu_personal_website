@@ -43,7 +43,7 @@
     </header>
 
     <div class="container">
-        <img src="../assets/image/portfolio/pf_1/pf_s1.png" alt="Image 1">
+        <img id="sectionId" src="../assets/image/portfolio/pf_1/pf_s1.png" alt="Image 1">
         <img id="overview" src="../assets/image/portfolio/pf_1/pf_s2.png" alt="Image 2">
         <img src="../assets/image/portfolio/pf_1/pf_s3.png" alt="Image 3">
         <img id="user-flow" src="../assets/image/portfolio/pf_1/pf_s4.png" alt="Image 4">
@@ -142,7 +142,7 @@
 
             function handleScroll() {
                 var scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
-                if (rootElement.scrollTop / scrollTotal > 0.2) {
+                if (rootElement.scrollTop / scrollTotal > 0.05) {
                     // Show button when 20% of the page is scrolled
                     scrollToTopBtn.style.display = "block";
                 } else {

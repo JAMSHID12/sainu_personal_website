@@ -1,76 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scroll to Top</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    .content {
-      height: 1000px; /* Adjust this height based on your content */
-      padding: 20px;
-    }
-
-    #scrollToTopBtn {
-      display: none;
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #f0f0f0; /* Grey background color */
-      border: none;
-      border-radius: 50%; /* Make it rounded */
-      cursor: pointer;
-      padding: 10px;
-      transition: background-color 0.3s ease; /* Add a smooth transition for hover effect */
-    }
-
-    #scrollToTopBtn:hover {
-      background-color: #3498db; /* Beautiful color on hover */
-    }
-
-    #scrollToTopBtn span {
-      color: #fff; /* Icon color */
-      font-size: 24px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Blur and Hide</title>
+    <style>
+        .section1 {
+            filter: blur(5px); /* Apply blur effect by default */
+            transition: filter 0.3s ease; /* Add transitions for a smooth effect */
+        }
+        .box {
+            width: 30%; /* Adjust the width as needed */
+            padding: 10px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-  <div class="content">
-    <!-- Your scrollable content goes here -->
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
-  </div>
-  <button id="scrollToTopBtn" onclick="scrollToTop()"><span>↑</span></button>
+    <div class="section1 " id="section1">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+    </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      var scrollToTopBtn = document.getElementById("scrollToTopBtn");
-      var rootElement = document.documentElement;
+    <div class="section2 " id="section2">
+        <div class="box">Box 4</div>
+        <div class="box">Box 5</div>
+        <div class="box">Box 6</div>
+    </div>
 
-      function handleScroll() {
-        var scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
-        if (rootElement.scrollTop / scrollTotal > 0.2) {
-          // Show button when 20% of the page is scrolled
-          scrollToTopBtn.style.display = "block";
-        } else {
-          // Hide button when less than 20% of the page is scrolled
-          scrollToTopBtn.style.display = "none";
+    <script>
+        // Check URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const passwordParam = urlParams.get('password');
+        const section1 = document.getElementById('section1');
+        const section2 = document.getElementById('section2');
+        // If the 'password' parameter is present, hide the first section and show the second section
+        if (passwordParam && passwordParam.toLowerCase() === 'true') {
+            section1.style.display = 'none';
+            section2.style.display = 'flex'; // Display the second section
+        }else{
+          section2.style.display = 'none';
+          section1.style.display = 'flex';
         }
-      }
-
-      function scrollToTop() {
-        rootElement.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      }
-
-      scrollToTopBtn.addEventListener("click", scrollToTop);
-      document.addEventListener("scroll", handleScroll);
-    });
-  </script>
+    </script>
 </body>
 </html>

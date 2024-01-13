@@ -12308,9 +12308,7 @@ p {
   -ms-filter: blur(6px);
 }
 
-.grid-item .overlay .overlay-infos {
-  display: none;
-}
+
 
 .portfolio-card .portfolio-card-overlay {
   position: absolute;

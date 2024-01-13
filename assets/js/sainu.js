@@ -47,3 +47,22 @@ $(document).ready(function(){
 
 
 
+// Check URL parameters
+const urlParams = new URLSearchParams(window.location.search);
+const passwordParam = urlParams.get('password');
+const section1 = document.getElementById('visible-section');
+const section2 = document.getElementById('hide-section');
+
+// If the 'password' parameter is present, hide the first section and show the second section
+if (passwordParam && passwordParam.toLowerCase() === 'sainu') {
+    section2.classList.remove('grid-item');
+    section1.style.display = 'none';
+    section2.style.display = 'inline'; // Display the second section
+} else {
+    section2.style.display = 'none';
+    
+}
+
+
+
+
