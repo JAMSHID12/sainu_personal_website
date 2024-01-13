@@ -64,5 +64,30 @@ if (passwordParam && passwordParam.toLowerCase() === 'sainu') {
 }
 
 
+// script.js
+
+document.addEventListener('DOMContentLoaded', function () {
+  const navLinks = document.querySelectorAll('nav a');
+  navLinks.forEach(function (link) {
+      link.addEventListener('click', function (event) {
+          event.preventDefault(); // Prevent the default behavior of the anchor link
+
+          const href = this.getAttribute('href');
+          const targetSectionId = href.substring(1); // Remove the leading '/'
+
+          const targetSection = document.getElementById(targetSectionId);
+
+          if (targetSection) {
+              // Scroll to the target section
+              targetSection.scrollIntoView({
+                  behavior: 'smooth'
+              });
+          }
+      });
+  });
+});
+
+
+
 
 

@@ -3,48 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conditional Blur and Hide</title>
+    <title>Navigation Example</title>
     <style>
-        .section1 {
-            filter: blur(5px); /* Apply blur effect by default */
-            transition: filter 0.3s ease; /* Add transitions for a smooth effect */
+        /* Some basic styling for clarity */
+        body {
+            font-family: Arial, sans-serif;
         }
-        .box {
-            width: 30%; /* Adjust the width as needed */
-            padding: 10px;
+        section {
+            margin: 20px;
+            padding: 20px;
             border: 1px solid #ddd;
-            box-sizing: border-box;
-            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="section1 " id="section1">
-        <div class="box">Box 1</div>
-        <div class="box">Box 2</div>
-        <div class="box">Box 3</div>
-    </div>
+    <nav>
+        <ul>
+            <!-- External link to another page -->
+            <li><a href="another-page.html">Go to Another Page</a></li>
+            
+            <!-- Internal link to a section on the same page -->
+            <li><a href="/section2">Go to Section 2</a></li>
+        </ul>
+    </nav>
 
-    <div class="section2 " id="section2">
-        <div class="box">Box 4</div>
-        <div class="box">Box 5</div>
-        <div class="box">Box 6</div>
-    </div>
+    <section id="section1">
+        <h2>Section 1</h2>
+        <p>This is the content of Section 1.</p>
+    </section>
+<div>
+  <pre>dddddd
+
+    <dd>
+      <datagrid><datagrid>d</datagrid></datagrid>
+
+      dfds
+      dfdsf
+
+
+      dsfas
+      <dd>
+
+
+
+
+
+
+
+        dddd
+      </dd>
+
+
+      sdfdf
+
+
+
+      dfd
+    </dd>
+  </pre>
+</div>
+    <section id="section2">
+        <h2>Section 2</h2>
+        <p>This is the content of Section 2.</p>
+    </section>
 
     <script>
-        // Check URL parameters
-        const urlParams = new URLSearchParams(window.location.search);
-        const passwordParam = urlParams.get('password');
-        const section1 = document.getElementById('section1');
-        const section2 = document.getElementById('section2');
-        // If the 'password' parameter is present, hide the first section and show the second section
-        if (passwordParam && passwordParam.toLowerCase() === 'true') {
-            section1.style.display = 'none';
-            section2.style.display = 'flex'; // Display the second section
-        }else{
-          section2.style.display = 'none';
-          section1.style.display = 'flex';
-        }
+        // Handle internal navigation using JavaScript
+        document.addEventListener('DOMContentLoaded', function () {
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(function (link) {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault(); // Prevent the default behavior of the anchor link
+
+                    const href = this.getAttribute('href');
+                    const targetSectionId = href.substring(1); // Remove the leading '/'
+
+                    const targetSection = document.getElementById(targetSectionId);
+
+                    if (targetSection) {
+                        // Scroll to the target section
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
