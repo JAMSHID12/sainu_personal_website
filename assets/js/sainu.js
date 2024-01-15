@@ -88,6 +88,34 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+// script.js
+
+document.addEventListener('DOMContentLoaded', function () {
+    var contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        var formData = new FormData(contactForm);
+
+        fetch('https://script.google.com/macros/s/AKfycbx64W7BWn9qa1OAUHGjjCsLQV55g669ulY_9ApPnL-8kKVqCHS-gi4RxF5IQhS9CajPow/exec', {
+            method: 'POST',
+            body: JSON.stringify(Object.fromEntries(formData)),
+           
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log(data);
+            alert("success");
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // Handle error (e.g., show an error message)
+        });
+    });
+});
+
+
+
 
 
 
