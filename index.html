@@ -278,61 +278,61 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="img-wrapper grid-item">
-                            <a onclick="zoomSection('target-section')" href="#contact-me">
+                            <a onclick="navigateTo('contact-form-nav'); zoomSection('target-section')" href="#contact-me">
                                 <img src="./assets/image/portfolio/pf_1.png" alt="">
                             </a>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="img-wrapper grid-item">
-                            <a onclick="zoomSection('target-section')" href="#contact-me">
+                            <a onclick="navigateTo('contact-form-nav'); zoomSection('target-section')" href="#contact-me">
                                 <img src="./assets/image/portfolio/pf_5.png" alt="">
                             </a>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="img-wrapper grid-item">
-                            <a onclick="zoomSection('target-section')" href="#contact-me">
+                            <a onclick="navigateTo('contact-form-nav'); zoomSection('target-section')" href="#contact-me">
                                 <img src="./assets/image/portfolio/pf_6.png" alt="">
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row" >
                     <div class="col-md-4">
                         <div class="img-wrapper grid-item">
-                            <a onclick="zoomSection('target-section')" href="#contact-me">
+                            <a onclick="navigateTo('contact-form-nav'); zoomSection('target-section')" href="#contact-me">
                                 <img src="./assets/image/portfolio/pf_7.png" alt="">
                             </a>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="img-wrapper grid-item">
-                            <a onclick="zoomSection('target-section')" href="#contact-me">
+                            <a onclick="navigateTo('contact-form-nav'); zoomSection('target-section')" href="#contact-me">
                                 <img src="./assets/image/portfolio/pf_8.png" alt="">
                             </a>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="img-wrapper grid-item">
-                            <a onclick="zoomSection('target-section')" href="#contact-me">
+                            <a onclick="navigateTo('contact-form-nav'); zoomSection('target-section')" href="#contact-me">
                                 <img src="./assets/image/portfolio/pf_9.png" alt="">
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" id="contact-form-nav">
                     <div class="col-md-4">
                         <div class="img-wrapper grid-item">
-                            <a onclick="zoomSection('target-section')" href="#contact-me">
+                            <a onclick="navigateTo('contact-form-nav'); zoomSection('target-section')" href="#contact-me">
                                 <img src="./assets/image/portfolio/pf_10.png" alt="">
                             </a>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 ">
                         <div class="img-wrapper grid-item">
-                            <a onclick="zoomSection('target-section')" href="#contact-me">
+                            <a onclick="navigateTo('contact-form-nav'); zoomSection('target-section')" href="#contact-me">
                                 <img src="./assets/image/portfolio/pf_11.png" alt="">
                             </a>
                         </div>
@@ -451,9 +451,9 @@
     <!-- section -->
     <section class="section-sm bg-primary" id="contact-me" >
         <!-- container -->
-        <div class="container text-center text-sm-left">
+        <div class="container text-center text-sm-left" >
             <!-- row -->
-            <div class="row align-items-center zoom-section" id="target-section">
+            <div class="row align-items-center zoom-section"  id="target-section">
                 <div class="col-sm offset-md-1 mb-4 mb-md-0">
                     <h6 class="title text-light">Want to see more works ?</h6>
                     <p class="m-0 text-light">Always feel free to contact</p>
@@ -898,31 +898,12 @@
 
         function zoomSection(sectionId) {
             const targetSection = document.getElementById(sectionId);
-            const isAlreadyVisible = isElementInViewport(targetSection);
-            if (!isAlreadyVisible) {
-                // Remove 'active' class from all sections
-                document.querySelectorAll('section').forEach(section => {
-                    section.classList.remove('active');
-                });
-                targetSection.classList.add('active');
-                const duration = 1000; // in milliseconds
-                const startTime = performance.now();
-                const startScroll = window.scrollY;
-                // Perform the scroll animation
-                function scrollAnimation(currentTime) {
-                    const elapsedTime = currentTime - startTime;
-                    const progress = Math.min(elapsedTime / duration, 1);
-                    const easeInOutCubic = progress < 0.5 ? 4 * progress ** 3 : 1 - Math.pow(-2 * progress + 2, 3) / 2;
-                    window.scrollTo(0, startScroll + (targetSection.offsetTop - startScroll) * easeInOutCubic);
-
-                    if (progress < 1) {
-                        requestAnimationFrame(scrollAnimation);
-                    }
-                }
-                requestAnimationFrame(scrollAnimation);
-            }
+            
             // Toggle the 'zoomed' class to trigger the zoom effect
-            targetSection.classList.toggle('zoomed');
+            setTimeout(function () {
+                targetSection.classList.toggle('zoomed');
+            }, 700); 
+            
             // After a delay, remove the 'zoomed' class to reset the section
             setTimeout(function () {
                 targetSection.classList.remove('zoomed');
