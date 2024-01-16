@@ -3,99 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Static Page with Path Variable</title>
+    <title>Zoom and Navigate Example</title>
     <style>
-        /* Some basic styling for clarity */
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
+            font-family: 'Arial', sans-serif;
         }
 
-        header {
-            background-color: #333;
-            color: white;
+        .zoom-link {
+            display: block;
             padding: 10px;
-            text-align: center;
-        }
-
-        nav {
-            background-color: #eee;
-            padding: 10px;
-        }
-
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav li {
-            display: inline-block;
-            margin-right: 10px;
-        }
-
-        section {
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
             margin: 20px;
-            padding: 20px;
-            border: 1px solid #ddd;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .zoom-link:hover {
+            background-color: #2980b9;
+        }
+
+        .zoom-section {
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        .zoom-section.zoomed {
+            opacity: 0.5;
+            transform: scale(1.5);
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Static Page with Path Variable</h1>
-    </header>
 
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
-    </nav>
+    <a href="#target-section" class="zoom-link" onclick="navigateAndZoom()">Click me to zoom and navigate</a>
 
-    <section id="content">
-        <!-- Content will be dynamically loaded here based on the path -->
-    </section>
+    <div id="target-section" class="zoom-section">
+        <!-- Your section content goes here -->
+        <h2>Target Section</h2>
+        <p>This is the section you want to zoom to.</p>
+    </div>
+    <video width="640" height="360" controls>
+        <source src="./assets/video/Create_Premade_Course_EOT.mov" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <iframe width="640" height="360" src="https://www.youtube.com/embed/18kTTtFMxek" frameborder="0" allowfullscreen></iframe>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Handle navigation based on path
-            navigate(window.location.pathname);
+        function navigateAndZoom() {
+            var targetSection = document.getElementById('target-section');
+            
+            // Toggle the 'zoomed' class to trigger the zoom effect
+            targetSection.classList.toggle('zoomed');
 
-            // Listen for navigation events
-            window.addEventListener('popstate', function (event) {
-                navigate(event.state.path);
-            });
-
-            // Handle navigation when a link is clicked
-            document.querySelectorAll('nav a').forEach(function (link) {
-                link.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    const path = this.getAttribute('href');
-                    navigate(path);
-                    window.history.pushState({ path }, '', path);
+            // Scroll to the target section after a delay (adjust the delay as needed)
+            setTimeout(function () {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth'
                 });
-            });
+            }, 500);
 
-            // Function to load content based on the path
-            function navigate(path) {
-                const contentSection = document.getElementById('content');
-
-                // Update content based on the path
-                switch (path) {
-                    case '/about':
-                        contentSection.innerHTML = '<h2>About Us</h2><p>This is the about page content.</p>';
-                        break;
-                    case '/contact':
-                        contentSection.innerHTML = '<h2>Contact Us</h2><p>This is the contact page content.</p>';
-                        break;
-                    default:
-                        contentSection.innerHTML = '<h2>Welcome</h2><p>This is the home page content.</p>';
-                }
-            }
-        });
+            setTimeout(function () {
+            targetSection.classList.remove('zoomed');
+        }, 1000);
+        }
     </script>
 </body>
 </html>

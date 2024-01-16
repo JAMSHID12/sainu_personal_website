@@ -12298,14 +12298,14 @@ p {
 }
 
 .portfolio .grid-item {
-  filter: blur(9px);
+  filter: blur(4px);
   /* Apply a 90% blur effect to the second row */
   position: relative;
   overflow: hidden;
-  -webkit-filter: blur(6px);
-  -moz-filter: blur(6px);
-  -o-filter: blur(6px);
-  -ms-filter: blur(6px);
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
 }
 
 
@@ -13132,18 +13132,22 @@ pre .code {
 }
 
 .about-img-holder {
-  min-width: 300px;
-  max-width: 350px;
-  margin-right: 20px;
+  margin-right: 10px;
+  display: inline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+            
+            
 }
 
 .about-img-holder .about-img {
-  width: 90%;
-  margin-bottom: 15px;
-  height: auto;
+  width: 280px;
+  height: 280px;
   display: block;
-  border-radius: 8px;
+  border-radius: 50%;
   opacity: 0.8;
+  margin-right: 20px;
 }
 
 .about-img:hover {
@@ -13673,5 +13677,31 @@ pre .code {
   font-size: 22px;
 }
 
+.mail-withphone{
+  display: flex;
+  padding: 0px;
+}
+
+.mail-withphone h6{
+  margin-right: 16px;
+  display: inline-block;
+}
+
+@media (max-width: 600px) {
+  .mail-withphone {
+    flex-direction: column;
+    text-align: center;
+  }
+}
 
 
+.zoom-section {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.zoom-section.zoomed {
+  opacity: 0.5;
+  transform: scale(1.5);
+}

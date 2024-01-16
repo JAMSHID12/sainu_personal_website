@@ -97,10 +97,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         var formData = new FormData(contactForm);
 
-        fetch('https://script.google.com/macros/s/AKfycbx64W7BWn9qa1OAUHGjjCsLQV55g669ulY_9ApPnL-8kKVqCHS-gi4RxF5IQhS9CajPow/exec', {
-            method: 'POST',
-            body: JSON.stringify(Object.fromEntries(formData)),
-           
+        fetch('https://script.google.com/macros/s/AKfycbwoesGFCZWi2eJ_FommjtpxEIiXWAHQ1r4y2V29quKWHW7uuANoib2CjB0ezLDNd5DRJQ/exec', {
+            method: 'POST'            
         })
         .then(response => response.text())
         .then(data => {
@@ -111,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error('Error:', error);
             // Handle error (e.g., show an error message)
         });
-    });
+    });  
 });
 
 
