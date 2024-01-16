@@ -13694,14 +13694,11 @@ pre .code {
   }
 }
 
-
 .zoom-section {
-  opacity: 1;
-  transform: scale(1);
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transform-origin: center center;
 }
 
 .zoom-section.zoomed {
-  opacity: 0.5;
-  transform: scale(1.5);
+  transform: scale(1.2); /* You can adjust the scale factor as needed */
 }
