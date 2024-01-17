@@ -40,6 +40,7 @@ header {
 
 .nav-bar ul {
     display: flex;
+    margin: 0;
 }
 
 .nav-bar ul li a {
@@ -91,7 +92,7 @@ header {
     .nav-bar {
         height: 0px;
         position: absolute;
-        top: 80px;
+        top: 60px;
         left: 0;
         right: 0;
         width: 100vw;
