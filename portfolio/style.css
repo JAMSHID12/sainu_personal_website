@@ -9,6 +9,7 @@
 
 body {
     background: #fefefe;
+    margin-top: 80px;
 }
 
 header {
@@ -18,14 +19,15 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 0 100px;
+    
 }
 
-/* .sticky {
+.sticky {
     position: fixed;
     top: 0;
     width: 100%;
     
-} */
+}
 
 .logo {
     font-size: 28px;
@@ -66,17 +68,24 @@ header {
 
 @media only screen and (max-width: 1320px) {
     header {
-        padding: 0 50px;
-    }
-}
-
-@media only screen and (max-width: 1100px) {
-    header {
         padding: 0 30px;
     }
 }
 
+@media only screen and (max-width: 920px) {
+    header {
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 22px;
+        font-weight: bold;
+        color: #fefefe;
+    }
+}
+
 @media only screen and (max-width: 765px) {
+
     .hamburger {
         display: block;
         cursor: pointer;
@@ -101,14 +110,20 @@ header {
         overflow: hidden;
     }
 
+    .logo {
+        font-size: 22px;
+        font-weight: bold;
+        color: #fefefe;
+    }
+
     .nav-bar.active {
-        height: 350px;
+        height: 420px;
     }
 
     .nav-bar ul {
         display: block;
         width: fit-content;
-        margin: 80px auto 0 auto;
+        margin: 30px auto 0 auto;
         text-align: center;
         transition: 0.5s;
         opacity: 0;
@@ -119,8 +134,8 @@ header {
     }
 
     .nav-bar ul li a {
-        margin-bottom: 12px;
-
+        margin-bottom: 0px;
+        font-size: 20px;
     }
 }
 
