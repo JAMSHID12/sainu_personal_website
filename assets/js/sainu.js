@@ -35,10 +35,10 @@ $(document).ready(function(){
           items: 3
         },
         600: {
-          items: 5 
+          items: 3
         },
         1000: {
-          items: 7
+          items: 6
         }
       }
     });
@@ -111,6 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });  
 });
+
 
 
 

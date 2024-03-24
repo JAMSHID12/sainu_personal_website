@@ -1,107 +1,85 @@
-<style>
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-        background: #95B8D1;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expand Container on Button Click</title>
+    <style>
+        /* Styling for the container */
+        .container {
+            position: relative;
+            width: 300px;
+            height: 100px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            transition: height 0.3s ease;
+        }
 
-    .logo {
-        font-size: 18px;
-        font-weight: bold;
-    }
+        /* Styling for the expanded container */
+        .container.expanded {
+            height: 200px; /* Set your desired expanded height here */
+        }
 
-    .nav-bar {
-        display: flex;
-        align-items: center;
-    }
-
-    .nav-bar ul {
-        list-style: none;
-        padding: 0;
-        display: flex;
-    }
-
-    .nav-bar li {
-        margin: 0 10px; /* Adjust the margin as needed */
-    }
-
-    .nav-bar a {
-        text-decoration: none;
-        color: #333; /* Adjust the color as needed */
-    }
-
-    .hamburger {
-        display: none; /* Hide the hamburger initially */
-        cursor: pointer;
-    }
-
-    .line {
-        height: 2px;
-        width: 20px;
-        background: #333; /* Adjust the color as needed */
-        margin: 4px 0;
-    }
-
-    @media (max-width: 768px) {
-        .nav-bar {
-            display: none;
-            flex-direction: column;
+        /* Styling for the "Show More" button */
+        .show-more-btn {
             position: absolute;
-            top: 60px;
-            left: 0;
-            width: 100%;
-            background: #95B8D1;
-            padding: 10px;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 5px 10px;
+            cursor: pointer;
+            text-align: center;
+            color: blue;
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
+    </style>
+</head>
+<body>
 
-        .nav-bar.show {
-            display: flex;
-        }
+<div class="container" id="container">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+    Vestibulum nec odio ipsum. Nulla facilisi.
 
-        .nav-bar ul {
-            flex-direction: column;
-            align-items: center;
-        }
 
-        .hamburger {
-            display: block;
-        }
-    }
-</style>
+    jsdfjdsjf 
+    kdfldsjf
+    aslkdfjsd
+    alooo
+    llsoos
 
-<header class="sticky">
-    <div class="logo">Expert Online Training</div>
-    <div class="hamburger" onclick="toggleNav()">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-    </div>
-    <nav class="nav-bar">
-        <ul>
-            <li>
-                <a href="../index.html">Home</a>
-            </li>
-            <li>
-                <a onclick="navigateTo('about')" href="#about">About</a>
-            </li>
-            <li>
-                <a onclick="navigateTo('goal')" href="#goal">Goal</a>
-            </li>
-            <li>
-                <a onclick="navigateTo('user-persona')" href="#user-persona">User-persona</a>
-            </li>
-            <li>
-                <a onclick="navigateTo('main-mapping')" href="#main-mapping">Mind-mapping</a>
-            </li>
-        </ul>
-    </nav>
-</header>
+    slfjidif
+    sldfd
+    sldfdsd
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+    Vestibulum nec odio ipsum. Nulla facilisi.
+
+
+    jsdfjdsjf 
+    kdfldsjf
+    aslkdfjsd
+    alooo
+    llsoos
+
+    slfjidif
+    sldfd
+    sldfdsd
+    <div class="show-more-btn" onclick="expandContainer()">Show More</div>
+</div>
 
 <script>
-    function toggleNav() {
-        var navBar = document.querySelector('.nav-bar');
-        navBar.classList.toggle('show');
+    function expandContainer() {
+        var container = document.getElementById('container');
+        
+        if (container.classList.contains('expanded')) {
+            container.classList.remove('expanded');
+        } else {
+            container.classList.add('expanded');
+        }
     }
 </script>
+
+</body>
+</html>
