@@ -9,7 +9,6 @@
 
 body {
     background: #fefefe;
-    margin-top: 80px;
 }
 
 header {
@@ -138,6 +137,11 @@ header {
         font-size: 20px;
     }
 }
+
+.container {
+    margin-top: 80px;
+}
+
 
 .container img{
     width: 100%;
