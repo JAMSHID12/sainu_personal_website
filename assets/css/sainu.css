@@ -12585,9 +12585,15 @@ pre .code {
   color: #fff;
 }
 
+@media (min-width:1023px) {
+  .logo-img {
+    padding-left: 53px;
+    
+  }
+}
+
 .logo-img {
-  
-  margin: 8px;
+  margin: 5px;
   height: 80px;
 }
 
@@ -13669,6 +13675,10 @@ pre .code {
   display: flex;
   align-items: center;
   margin: 10px;
+}
+
+.education .card{
+  height: 240px;
 }
 
 .education .colum-header i {
