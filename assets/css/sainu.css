@@ -13665,6 +13665,16 @@ pre .code {
         11. resume
 --------------------------------------*/
 
+
+
+@media (min-width: 900px) {
+  .resume{
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+}
+
+
 .experience .colum-header {
   display: flex;
   align-items: center;
@@ -13675,10 +13685,6 @@ pre .code {
   display: flex;
   align-items: center;
   margin: 10px;
-}
-
-.education .card{
-  height: 240px;
 }
 
 .education .colum-header i {
@@ -13702,8 +13708,16 @@ pre .code {
 .education .card {
   padding: 15px;
   margin: 10px;
+  height: 240px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 430px) {
+  .education .card {
+    height: 240px;
+   background-color: yellow;
+  }
 }
 
 .education .card hr {
